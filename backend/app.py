@@ -1,7 +1,7 @@
 import json
 from typing import Optional
 
-from pydantic import BaseModel, ValidationError, field_validator
+from pydantic import BaseModel, ValidationError, model_validator
 from fastapi import FastAPI
 
 
@@ -15,45 +15,40 @@ class Salary(BaseModel):
     prepaid_bonus: float
     postpaid_bonus: float
 
+    @model_validator(mode='after')
+    def _validate(self):
+        if self.base_payment <= 0:
+            raise ValueError('Base payment must be > 0')
+        else:
+            return self
+
 class MonthSalary(BaseModel):
-    salary: Salary
+
+    months: dict[int, Salary]
+
+    @model_validator(mode='after')
+    def _validate(self):
+        if len(self.months) < 12:
+            raise ValueError('Months count must be = 12')
+        else:
+            return self  
 
 class MonthFinances(BaseModel):
 
-    months: dict[int, MonthSalary]
+    salary: MonthSalary      
 
 class YearFinances(BaseModel):
 
     years: dict[int, MonthFinances]
 
 
-raw_json = """
+get_err_msg = lambda e: json.loads(e.json())[0]['msg']
 
-{
-  "years": 
-  {
-    "2024": 
-    {
-      "months": 
-      {
-        "1": 
-        {
-          "salary":
-          {
-            "fst_half_hours": 0,
-            "snd_half_hours": 0,
-            "base_payment": 0.00,
-            "prepaid_bonus": 0.00,
-            "postpaid_bonus": 0.00
-          }
-        }
-      }
-    }
-  }
-}
-
-"""
-
-finances = YearFinances.model_validate_json(raw_json)
-
-print(finances.model_dump_json(indent=2))
+with open('finances.json', 'r') as raw_json:
+    try:
+        finances = YearFinances.model_validate_json(raw_json.read())
+    except ValidationError as e:
+        print(f'ValidationError: {get_err_msg(e)}')
+    else:
+        data = finances.years[2024].salary.months[1]
+        print(data.model_dump_json(indent=2))
