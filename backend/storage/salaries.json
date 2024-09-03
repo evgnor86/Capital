@@ -1,0 +1,92 @@
+{
+    "years": {
+        "2024": {
+            "months": {
+                "1": {
+                    "fst_half_hours": 40,
+                    "snd_half_hours": 96,
+                    "base_payment": 76321,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "2": {
+                    "fst_half_hours": 88,
+                    "snd_half_hours": 71,
+                    "base_payment": 76321,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "3": {
+                    "fst_half_hours": 79,
+                    "snd_half_hours": 80,
+                    "base_payment": 76321,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "4": {
+                    "fst_half_hours": 88,
+                    "snd_half_hours": 80,
+                    "base_payment": 76321,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 256686.54
+                },
+                "5": {
+                    "fst_half_hours": 63,
+                    "snd_half_hours": 96,
+                    "base_payment": 76321,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "6": {
+                    "fst_half_hours": 32,
+                    "snd_half_hours": 0,
+                    "base_payment": 76321,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "7": {
+                    "fst_half_hours": 0,
+                    "snd_half_hours": 0,
+                    "base_payment": 87777,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "8": {
+                    "fst_half_hours": 88,
+                    "snd_half_hours": 88,
+                    "base_payment": 87777,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "9": {
+                    "fst_half_hours": 80,
+                    "snd_half_hours": 88,
+                    "base_payment": 87777,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "10": {
+                    "fst_half_hours": 88,
+                    "snd_half_hours": 96,
+                    "base_payment": 87777,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "11": {
+                    "fst_half_hours": 87,
+                    "snd_half_hours": 80,
+                    "base_payment": 87777,
+                    "prepaid_bonus": 0,
+                    "postpaid_bonus": 0
+                },
+                "12": {
+                    "fst_half_hours": 80,
+                    "snd_half_hours": 88,
+                    "base_payment": 87777,
+                    "prepaid_bonus": 209350.98,
+                    "postpaid_bonus": 0
+                }
+            }
+        }
+    }
+}
